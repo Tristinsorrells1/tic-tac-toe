@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <section class="person player-view">
+        <div class="player-info">
+            <p class="emoji">🏃‍♀️</p>
+            <p class="person-score score">0 wins</p>
+        </div>
+    </section>
+    <section class="game-view">
+        <div class="game-info">
+            <p class="game-status">It's Emoji's turn</p>
+        </div>
+        <grid class="game-board">
+            <div class= "top-grid left-grid"id="grid1">1</div>
+            <div class="top-grid"id="grid2">2</div>
+            <div class="top-grid right-grid"id="grid3">3</div>
+            <div class="middle-grid left-grid" id="grid4">4</div>
+            <div class="middle-grid" id="grid5">5</div>
+            <div class="middle-grid right-grid" id="grid6">6</div>
+            <div class="bottom-grid left-grid" id="grid7">7</div>
+            <div class="bottom-grid"id="grid8">8</div>
+            <div class="bottom-grid right-grid" id="grid9">9</div>
+
+        </grid>
+    </section>
+    <section class="bear player-view">
+        <div class="player-info">
+            <p class="emoji">🐻</p>
+            <p class="bear-score score">0 wins</p>
+        </div>
+    </section>
+    <script src="./game.js"></script>
+    <script src="./player.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
