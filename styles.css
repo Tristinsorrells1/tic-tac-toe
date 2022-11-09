@@ -46,6 +46,7 @@ body {
     flex-direction: column;
 }
 
+/* Grid Styling */
 .game-board {
     display: grid;
     grid-template-rows: 200px 200px 200px;
@@ -56,13 +57,13 @@ body {
 .middle-grid,
 .bottom-grid,
 .middle-grid {
-    border-right: 1px solid green;
-    border-left: 1px solid green;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
 }
 
 .bottom-grid,
 .middle-grid {
-    border-top: 2px solid green;
+    border-top: 2px solid grey;
 }
 
 .left-grid {
