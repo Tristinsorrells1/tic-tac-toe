@@ -45,3 +45,36 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.game-board {
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+}
+
+.top-grid,
+.middle-grid,
+.bottom-grid,
+.middle-grid {
+    border-right: 1px solid green;
+    border-left: 1px solid green;
+}
+
+.bottom-grid,
+.middle-grid {
+    border-top: 2px solid green;
+}
+
+.left-grid {
+    border-left: 0px;
+}
+
+.right-grid {
+    border-right: 0px;
+}
+
+
+
+
+
+
