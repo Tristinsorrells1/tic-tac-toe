@@ -18,6 +18,18 @@ class Game {
         }
     }
 
+    makePlay(event) {
+    var move = event.target.id
+    if (game.turn % 2 === 0) {
+        player2.boxes.push(move)
+        console.log("player2box", player2.boxes)
+        }
+    else {
+        player1.boxes.push(move)
+        console.log("player1box", player1.boxes)
+    }
+}
+
     checkForWinner() {
         var winningPlays = [
             [0, 1, 2],
