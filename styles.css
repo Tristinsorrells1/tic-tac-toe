@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: default;
 }
 
 body {
@@ -29,6 +30,10 @@ body {
 .grid {
     font-size: 120px;
     padding-left: 30px;
+}
+
+.taken {
+    cursor: not-allowed;
 }
 
 .score,
