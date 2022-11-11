@@ -57,12 +57,12 @@ class Game {
             var player1StringBoxes = player1.boxes.toString();
             var player2StringBoxes = player2.boxes.toString();
 
-            if (winningPlays[i].includes(player1StringBoxes)) {
+            if (player1StringBoxes.includes(winningPlays[i])) {
                 player1.increaseWins()
                 this.winner = "player1"
                 console.log("player1 won")
             }
-            else if (winningPlays[i].includes(player2StringBoxes)) {
+            else if (player2StringBoxes.includes(winningPlays[i])) {
                 player2.increaseWins()
                 this.winner = "player2" 
                 console.log("player2 won")
