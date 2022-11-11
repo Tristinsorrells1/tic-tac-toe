@@ -6,7 +6,10 @@ var gameBoard = document.querySelector('.game-board')
 //----------------------------------------eventListeners-------------------------------
 
 gameBoard.addEventListener('click', function(event){
-    makePlay(event)
+    game.determineTurn()
+    game.makePlay(event)
+    game.checkForWinner()
+    game.checkForDraw()
 
 })
 
