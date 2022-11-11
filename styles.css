@@ -26,6 +26,11 @@ body {
     align-self: center;
 }
 
+.grid {
+    font-size: 120px;
+    padding-left: 30px;
+}
+
 .score,
 .game-status {
     font-size: 45px;
