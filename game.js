@@ -17,7 +17,7 @@ class Game {
         }
     }
 
-    checkForWinner(){
+    checkForWinner() {
         var winningPlays = [
             [0, 1, 2],
             [3, 4, 5],
@@ -41,6 +41,11 @@ class Game {
         }
     }
 
+    checkForDraw() {
+        if (this.plays === 9 && this.winner === null) {
+            this.winner = "draw"
+        }
+    }
 
 
 }
