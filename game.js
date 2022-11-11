@@ -31,12 +31,12 @@ class Game {
         for (var i = 0; i < winningPlays.length; i++) {
 
             if (player1.boxes.includes(winningPlays[i])) {
-                player1.wins++
-                this.winner = player1
+                player1.increaseWins()
+                this.winner = "player1"
             }
             else if (player2.boxes.includes(winningPlays[i])) {
-                player2.wins++
-                this.winner = player2 
+                player2.increaseWins()
+                this.winner = "player2" 
             }
         }
     }
@@ -47,5 +47,17 @@ class Game {
         }
     }
 
+    newGame() {
+        player1. boxes = []
+        player2.boxes = []
+        this.player = 0
+        this.winner = null
+        if (this.winner === "player1" || "draw") {
+            this.turn = player2.id
+        }
+        else if (this.winner === "player2") {
+            this.turn = player1.id
+        }
+    }
 
 }
