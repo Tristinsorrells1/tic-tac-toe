@@ -78,18 +78,23 @@ class Game {
     }
 
     newGame() {
-        console.log("newGame")
         if (this.winner !== null) {
             player1.boxes = []
             player2.boxes = []
-            this.player = 0
-            this.winner = null
-            if (this.winner === "player1" || "draw") {
+            this.plays = 0
+            if (this.winner === "player1") {
+                console.log(this.winner)
+                console.log("yup")
                 this.turn = 2
+                this.icon = player2.token
             }
             else if (this.winner === "player2") {
+                console.log("hmm")
                 this.turn = 1
+                this.icon = player1.token
             }
+            this.winner = null
+            
         } 
     }
 
