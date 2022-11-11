@@ -12,9 +12,17 @@ gameBoard.addEventListener('click', function(event){
 
 //----------------------------------------global variables-------------------------------
 
+var game = new Game(player1, player2)
+
 //----------------------------------------functions-------------------------------
 
 function makePlay(event) {
-    console.log(event.target.id)
+    var move = event.target.id
+    if (game.turn % 2 === 0) {
+        player2.boxes[move].push(player2.id)
+    }
+    else {
+        player1.boxes[move].push(player2.id)
+    }
 
 }

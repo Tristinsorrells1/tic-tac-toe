@@ -4,16 +4,17 @@ class Game {
         this.player2 = player2
         this.plays = 0
         this.turn = 1
+        this.gamePiece = null
         this.winner = null
     }
 
     determineTurn() {
         this.plays ++
-        if (this.turn === 1){
-            this.turn = player1.id
+        if (this.turn % 2 === 0){
+            this.gamePiece = player2.id
         }
         else {
-            this.turn = player2.id
+            this.gamePiece = player2.id
         }
     }
 
@@ -53,10 +54,10 @@ class Game {
         this.player = 0
         this.winner = null
         if (this.winner === "player1" || "draw") {
-            this.turn = player2.id
+            this.turn = 2
         }
         else if (this.winner === "player2") {
-            this.turn = player1.id
+            this.turn = 1
         }
     }
 
