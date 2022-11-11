@@ -60,12 +60,12 @@ class Game {
             if (winningPlays[i].includes(player1StringBoxes)) {
                 player1.increaseWins()
                 this.winner = "player1"
-                console.log("player 1 wins")
+                console.log("player1 won")
             }
             else if (winningPlays[i].includes(player2StringBoxes)) {
                 player2.increaseWins()
                 this.winner = "player2" 
-                console.log("player 2 wins")
+                console.log("player2 won")
             }
         }
     }
@@ -78,16 +78,19 @@ class Game {
     }
 
     newGame() {
-        player1. boxes = []
-        player2.boxes = []
-        this.player = 0
-        this.winner = null
-        if (this.winner === "player1" || "draw") {
-            this.turn = 2
-        }
-        else if (this.winner === "player2") {
-            this.turn = 1
-        }
+        console.log("newGame")
+        if (this.winner !== null) {
+            player1.boxes = []
+            player2.boxes = []
+            this.player = 0
+            this.winner = null
+            if (this.winner === "player1" || "draw") {
+                this.turn = 2
+            }
+            else if (this.winner === "player2") {
+                this.turn = 1
+            }
+        } 
     }
 
 }

@@ -4,6 +4,7 @@ var gameBoard = document.querySelector('.game-board')
 var gameStatus = document.querySelector('.game-status')
 var personScore = document.querySelector('.person-score')
 var bearScore = document.querySelector('.bear-score')
+var gameGrid = document.querySelectorAll('.grid')
 
 
 //----------------------------------------eventListeners-------------------------------
@@ -17,6 +18,7 @@ gameBoard.addEventListener('click', function(event){
     game.checkForDraw()
     placeIcon(event)
     updateScore()
+    game.newGame()
 
 })
 
@@ -51,5 +53,19 @@ function updateScore() {
     else if (game.winner === "draw") {
         gameStatus.innerText = "It is a DRAW!"
     }
+    if (game.winner !== null) {
+        pauseThenReset()
+    }
+}
 
+function pauseThenReset(){
+    setTimeout(resetBoard, 4000)
+}
+
+function resetBoard() {
+    console.log("reset baord")
+    gameStatus.innerText = `It's ${game.icon}'s turn!`
+    for (var i = 0; i < gameGrid.length; i++) {
+        gameGrid[i].innerText = ""  
+    }
 }
