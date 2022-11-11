@@ -3,19 +3,19 @@ class Game {
         this.player1 = player1
         this.player2 = player2
         this.plays = 0
-        this.turn = 1
+        this.turn = 0
         this.winner = null
-        this.icon = null
+        this.icon = "🏃‍♀️"
     }
 
     determineTurn() {
-        console.log("turn", this.turn)
         if (this.turn % 2 === 0){
             this.icon = player2.token
         }
         else {
             this.icon = player1.token
         }
+        console.log("turn", this.turn)
     }
 
     makePlay(event) {

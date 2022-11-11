@@ -1,11 +1,14 @@
 //----------------------------------------querySelectors-------------------------------
 
 var gameBoard = document.querySelector('.game-board')
+var gameStatus = document.querySelector('.game-status')
 
 
 //----------------------------------------eventListeners-------------------------------
 
+
 gameBoard.addEventListener('click', function(event){
+    updateText()
     game.determineTurn()
     game.makePlay(event)
     game.checkForWinner()
@@ -28,3 +31,7 @@ function placeIcon(event) {
         event.target.classList.add('taken')
     }
 }
+
+function updateText() {
+        gameStatus.innerText = `It is ${game.icon}'s turn`
+    }
