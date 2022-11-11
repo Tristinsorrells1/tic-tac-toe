@@ -32,7 +32,8 @@ body {
     padding-left: 30px;
 }
 
-.taken {
+.taken:active {
+    opacity: .4;
     cursor: not-allowed;
 }
 
