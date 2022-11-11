@@ -5,14 +5,16 @@ class Game {
         this.plays = 0
         this.turn = 1
         this.winner = null
+        this.icon = null
     }
 
     determineTurn() {
+        console.log("turn", this.turn)
         if (this.turn % 2 === 0){
-            this.gamePiece = player2.id
+            this.icon = player2.token
         }
         else {
-            this.gamePiece = player2.id
+            this.icon = player1.token
         }
     }
 
@@ -63,8 +65,6 @@ class Game {
     }
 
     checkForDraw() {
-        console.log(this.plays)
-        console.log(this.winner)
         if (this.plays === 9  && this.winner === null) {
             this.winner = "draw"
             console.log("it's a draw")

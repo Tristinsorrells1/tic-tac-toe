@@ -10,6 +10,7 @@ gameBoard.addEventListener('click', function(event){
     game.makePlay(event)
     game.checkForWinner()
     game.checkForDraw()
+    placeIcon(event)
 
 })
 
@@ -21,3 +22,8 @@ var player2 = new Player(2, "🐻")
 
 //----------------------------------------functions-------------------------------
 
+function placeIcon(event) {
+    console.log(event.target.innerText)
+    console.log(game.icon)
+    event.target.innerText = `${game.icon}`
+}
