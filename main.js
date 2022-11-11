@@ -63,9 +63,9 @@ function pauseThenReset(){
 }
 
 function resetBoard() {
-    console.log("reset baord")
     gameStatus.innerText = `It's ${game.icon}'s turn!`
     for (var i = 0; i < gameGrid.length; i++) {
-        gameGrid[i].innerText = ""  
+        gameGrid[i].innerText = "" 
+        gameGrid[i].classList.remove('taken') 
     }
 }
