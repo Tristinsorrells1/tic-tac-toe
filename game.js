@@ -34,14 +34,6 @@ class Game {
 
     checkForWinner() {
         var winningPlays = [
-            // [1, 2, 3],
-            // [4, 5, 6],
-            // [7, 8, 9],
-            // [1, 4, 7],
-            // [2, 5, 8],
-            // [3, 6, 9],
-            // [1, 5, 9],
-            // [3, 5, 7]
             ['1,2,3'],
             ['4,5,6'],
             ['7,8,9'],
@@ -62,7 +54,7 @@ class Game {
                 this.winner = "player1"
                 console.log("player 1 wins")
             }
-            else if (player2.boxes === winningPlays[i]) {
+            else if (winningPlays[i].includes(player2StringBoxes)) {
                 player2.increaseWins()
                 this.winner = "player2" 
                 console.log("player 2 wins")
@@ -71,8 +63,11 @@ class Game {
     }
 
     checkForDraw() {
-        if (this.plays === 9 && this.winner === null) {
+        console.log(this.plays)
+        console.log(this.winner)
+        if (this.plays === 9  && this.winner === null) {
             this.winner = "draw"
+            console.log("it's a draw")
         }
     }
 
