@@ -5,7 +5,7 @@ class Game {
         this.plays = 0
         this.turn = 0
         this.winner = null
-        this.icon = "🏃‍♀️"
+        this.icon = "🐻"
     }
 
     determineTurn() {
@@ -16,6 +16,7 @@ class Game {
             this.icon = player1.token
         }
         console.log("turn", this.turn)
+        
     }
 
     makePlay(event) {
