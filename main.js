@@ -23,7 +23,8 @@ var player2 = new Player(2, "🐻")
 //----------------------------------------functions-------------------------------
 
 function placeIcon(event) {
-    console.log(event.target.innerText)
-    console.log(game.icon)
-    event.target.innerText = `${game.icon}`
+    if (!event.target.classList.contains('taken')) {
+        event.target.innerText = `${game.icon}`
+        event.target.classList.add('taken')
+    }
 }
