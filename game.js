@@ -36,39 +36,39 @@ class Game {
             player1.boxes.push(move)
             this.turn++
         }
-            console.log("player1box", player1.boxes)
-            console.log("player2box", player2.boxes)
+            // console.log("player1box", player1.boxes)
+            // console.log("player2box", player2.boxes)
         }
-    
-    checkForWinner() {
-        var winningPlays = [
-            ['1,2,3'],
-            ['4,5,6'],
-            ['7,8,9'],
-            ['1,4,7'],
-            ['2,5,8'],
-            ['3,6,9'],
-            ['1,5,9'],
-            ['3,5,7']
-        ]
-        for (var i = 0; i < winningPlays.length; i++) {
-            player1.boxes.sort();
-            player2.boxes.sort();
-            var player1StringBoxes = player1.boxes.toString();
-            var player2StringBoxes = player2.boxes.toString();
+        
+        checkForWinner() {
+            var winningPlays = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9],
+                [1, 4, 7],
+                [2, 5, 8],
+                [3, 6, 9],
+                [1, 5, 9],
+                [3, 5, 7]
+            ]
+           
+            for (var i = 0; i < winningPlays.length; i++) {
+                var checkPlayer1Arrays = winningPlays[i].every(val =>player1.boxes.includes(val))
+                var checkPlayer2Arrays = winningPlays[i].every(val => player2.boxes.includes(val))
 
-            if (player1StringBoxes.includes(winningPlays[i])) {
+                if (checkPlayer1Arrays) {
                 player1.increaseWins()
                 this.winner = "player1"
                 console.log("player1 won")
             }
-            else if (player2StringBoxes.includes(winningPlays[i])) {
+                else if (checkPlayer2Arrays) {
                 player2.increaseWins()
                 this.winner = "player2" 
                 console.log("player2 won")
             }
         }
     }
+    
 
     checkForDraw() {
         if (this.plays === 9  && this.winner === null) {
