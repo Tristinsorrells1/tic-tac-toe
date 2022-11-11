@@ -40,8 +40,6 @@ class Game {
             console.log("player2box", player2.boxes)
         }
     
-
-
     checkForWinner() {
         var winningPlays = [
             ['1,2,3'],
