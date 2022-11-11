@@ -22,17 +22,24 @@ class Game {
     this.plays++
     var moveString = event.target.id
     var move = parseInt(moveString)
-    if (game.turn % 2 === 0) {
-        player2.boxes.push(move)
-        this.turn++
-        console.log("player2box", player2.boxes)
+        for (var i = 0; i < this.plays; i++) {
+            if (player1.boxes[i] === move || player2.boxes[i] === move) {
+                    console.log("taken")
+                    return
+                }
+            if (this.turn % 2 === 0) {
+                player2.boxes.push(move)
+                this.turn++
+            }
+            else {
+                player1.boxes.push(move)
+                this.turn++
+            }
         }
-    else {
-        player1.boxes.push(move)
-        this.turn++
         console.log("player1box", player1.boxes)
+        console.log("player2box", player2.boxes)
     }
-}
+
 
     checkForWinner() {
         var winningPlays = [
