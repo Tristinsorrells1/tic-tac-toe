@@ -77,7 +77,6 @@ class Game {
                 }
          }
     }
-    
 
     checkForDraw() {
         if (this.plays === 9  && this.winner === null) {
@@ -91,17 +90,18 @@ class Game {
             player1.boxes = []
             player2.boxes = []
             this.plays = 0
-            if (this.winner === "player1") {
-                this.turn = "player2"
-                this.icon = player2.token
-            }
-            else if (this.winner === "player2") {
-                this.turn = "player1"
-                this.icon = player1.token
-            }
-            this.winner = null
-            
-        } 
+            this.turn = null
+            this.icon = null
+        }
+        if (this.winner === "player1") {
+            this.turn = "player2"
+            this.icon = player2.token
+        }
+        else if (this.winner === "player2") {
+            this.turn = "player1"
+            this.icon = player1.token
+        }
+            this.winner = null     
     }
 
 }

@@ -1,15 +1,10 @@
 //----------------------------------------querySelectors-------------------------------
-
 var gameBoard = document.querySelector('.game-board')
 var gameStatus = document.querySelector('.game-status')
 var personScore = document.querySelector('.person-score')
 var bearScore = document.querySelector('.bear-score')
 var gameGrid = document.querySelectorAll('.grid')
-
-
 //----------------------------------------eventListeners-------------------------------
-
-
 gameBoard.addEventListener('click', function(event){
     placeIcon(event)
     game.makePlay(event)
@@ -18,19 +13,14 @@ gameBoard.addEventListener('click', function(event){
     game.checkForDraw()
     updateScore()
     game.newGame()
-
 })
-
 //----------------------------------------global variables-------------------------------
-
 var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
 var checkPlayer1Arrays
 var checkPlayer2Arrays
-
 //----------------------------------------functions-------------------------------
-
 function placeIcon(event) {
     if (!event.target.classList.contains('taken')) {
         event.target.innerText = `${game.icon}`
@@ -39,8 +29,8 @@ function placeIcon(event) {
 }
 
 function updateText() {
-        gameStatus.innerText = `It is ${game.icon}'s turn`
-    }
+    gameStatus.innerText = `It is ${game.icon}'s turn`
+}
 
 function updateScore() {
     if (game.winner === "player1") {
