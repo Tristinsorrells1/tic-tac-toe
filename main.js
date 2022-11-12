@@ -5,7 +5,7 @@ var personScore = document.querySelector('.person-score')
 var bearScore = document.querySelector('.bear-score')
 var gameGrid = document.querySelectorAll('.grid')
 //----------------------------------------eventListeners-------------------------------
-gameBoard.addEventListener('click', function(event){
+gameBoard.addEventListener('click', function(event) {
     placeIcon(event)
     game.makePlay(event)
     updateText()
@@ -18,8 +18,6 @@ gameBoard.addEventListener('click', function(event){
 var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
-var checkPlayer1Arrays
-var checkPlayer2Arrays
 //----------------------------------------functions-------------------------------
 function placeIcon(event) {
     if (!event.target.classList.contains('taken')) {
@@ -49,7 +47,7 @@ function updateScore() {
     }
 }
 
-function pauseThenReset(){
+function pauseThenReset() {
     setTimeout(resetBoard, 1000)
 }
 
