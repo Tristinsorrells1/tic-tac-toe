@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: default;
 }
 
 body {
@@ -24,6 +25,16 @@ body {
 .emoji {
     font-size: 80px;
     align-self: center;
+}
+
+.grid {
+    font-size: 120px;
+    padding-left: 30px;
+}
+
+.taken:active {
+    opacity: .4;
+    cursor: not-allowed;
 }
 
 .score,
