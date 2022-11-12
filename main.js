@@ -12,8 +12,8 @@ var gameGrid = document.querySelectorAll('.grid')
 
 gameBoard.addEventListener('click', function(event){
     placeIcon(event)
-    updateText()
     game.makePlay(event)
+    updateText()
     game.checkForWinner()
     game.checkForDraw()
     updateScore()
