@@ -11,9 +11,9 @@ var gameGrid = document.querySelectorAll('.grid')
 
 
 gameBoard.addEventListener('click', function(event){
+    game.determineTurn()
     updateText()
     game.makePlay(event)
-    game.determineTurn()
     game.checkForWinner()
     game.checkForDraw()
     placeIcon(event)
@@ -27,6 +27,8 @@ gameBoard.addEventListener('click', function(event){
 var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
+var checkPlayer1Arrays
+var checkPlayer2Arrays
 
 //----------------------------------------functions-------------------------------
 
