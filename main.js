@@ -11,13 +11,13 @@ var gameGrid = document.querySelectorAll('.grid')
 
 
 gameBoard.addEventListener('click', function(event){
-    game.determineTurn()
     updateText()
+    game.determineTurn()
     game.makePlay(event)
     game.checkForWinner()
     game.checkForDraw()
-    placeIcon(event)
     updateScore()
+    placeIcon(event)
     game.newGame()
 
 })
@@ -46,11 +46,11 @@ function updateText() {
 function updateScore() {
     if (game.winner === "player1") {
         personScore.innerText = `${player1.wins} wins`
-        gameStatus.innerText = `${player1.token} won this round!`
+        gameStatus.innerText =  `🏃‍♀️ won this round!`
     }
     else if (game.winner === "player2") {
         bearScore.innerText = `${player2.wins} wins`
-        gameStatus.innerText = `${player2.token} won this round!`
+        gameStatus.innerText = `🐻 won this round!`
     }
     else if (game.winner === "draw") {
         gameStatus.innerText = "It is a DRAW!"
@@ -65,7 +65,7 @@ function pauseThenReset(){
 }
 
 function resetBoard() {
-    gameStatus.innerText = `It's ${game.icon}'s turn!`
+    gameStatus.innerText = `Home`
     for (var i = 0; i < gameGrid.length; i++) {
         gameGrid[i].innerText = "" 
         gameGrid[i].classList.remove('taken') 

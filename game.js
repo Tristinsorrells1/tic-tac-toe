@@ -9,13 +9,14 @@ class Game {
     }
 
     determineTurn() {
-        if (this.turn % 2 === 0){
+        if (this.turn % 2 == 0){
             this.icon = player2.token
         }
         else {
             this.icon = player1.token
         }
         console.log("turn", this.turn)
+        console.log("icon", this.icon)
         
     }
 
@@ -28,19 +29,16 @@ class Game {
                 return
             }
         }
-        if (this.turn % 2 === 0) {
-            player2.boxes.push(move)
-            this.turn++
-            this.plays++
-        }
-        else {
-            player1.boxes.push(move)
-            this.turn++
-            this.plays++
-        }
-            console.log("player1box", player1.boxes)
-            console.log("player2box", player2.boxes)
-            console.log(this.turn)
+            if (this.turn % 2 === 0) {
+                player2.boxes.push(move)
+                this.turn++
+                this.plays++
+            }
+            else {
+                player1.boxes.push(move)
+                this.turn++
+                this.plays++
+            }
         }
         
         checkForWinner() {
@@ -56,9 +54,6 @@ class Game {
             ]
            
             for (var i = 0; i < winningPlays.length; i++) {
-                // var checkPlayer1Arrays = winningPlays[i].every(val =>player1.boxes.includes(val))
-                // var checkPlayer2Arrays = winningPlays[i].every(val => player2.boxes.includes(val))
-
                 if (player1.boxes.includes(winningPlays[i][0]) &&
                     player1.boxes.includes(winningPlays[i][1]) &&
                     player1.boxes.includes(winningPlays[i][2])) {
@@ -70,8 +65,8 @@ class Game {
                     player2.boxes.includes(winningPlays[i][1]) &&
                     player2.boxes.includes(winningPlays[i][2])) {
                     player2.increaseWins()
-                    this.winner = "player1"
-                    console.log("player1 won")
+                    this.winner = "player2"
+                    console.log("player2 won")
                 }
          }
     }
