@@ -11,13 +11,12 @@ var gameGrid = document.querySelectorAll('.grid')
 
 
 gameBoard.addEventListener('click', function(event){
+    placeIcon(event)
     updateText()
-    game.determineTurn()
     game.makePlay(event)
     game.checkForWinner()
     game.checkForDraw()
     updateScore()
-    placeIcon(event)
     game.newGame()
 
 })

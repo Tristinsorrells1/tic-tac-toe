@@ -3,20 +3,22 @@ class Game {
         this.player1 = player1
         this.player2 = player2
         this.plays = 0
-        this.turn = 1
+        this.turn = "player2"
         this.winner = null
         this.icon = "🐻"
     }
 
     determineTurn() {
-        if (this.turn % 2 == 0){
+        console.log(this.turn)
+        if (this.turn === "player1"){
+            this.turn = "player2"
             this.icon = player2.token
         }
-        else {
+        else if (this.turn === "player2") {
+            this.turn = "player1"
             this.icon = player1.token
+
         }
-        console.log("turn", this.turn)
-        console.log("icon", this.icon)
         
     }
 
@@ -29,15 +31,19 @@ class Game {
                 return
             }
         }
-            if (this.turn % 2 === 0) {
+            if (this.turn === "player2") {
                 player2.boxes.push(move)
-                this.turn++
+                console.log("should be player2", this.turn)
+                console.log("player2boxes", player2.boxes)
                 this.plays++
+                this.determineTurn()
             }
-            else {
+            else if (this.turn === "player1") {
                 player1.boxes.push(move)
-                this.turn++
+                console.log("should be player1", this.turn)
+                console.log("player1boxes", player1.boxes)
                 this.plays++
+                this.determineTurn()
             }
         }
         
@@ -54,19 +60,20 @@ class Game {
             ]
            
             for (var i = 0; i < winningPlays.length; i++) {
-                if (player1.boxes.includes(winningPlays[i][0]) &&
+                if ((player1.boxes.includes(winningPlays[i][0]) &&
                     player1.boxes.includes(winningPlays[i][1]) &&
-                    player1.boxes.includes(winningPlays[i][2])) {
+                    player1.boxes.includes(winningPlays[i][2]))) {
                         player1.increaseWins()
                         this.winner = "player1"
                         console.log("player1 won")
+                        
                     }
-                else if (player2.boxes.includes(winningPlays[i][0]) &&
+                else if ((player2.boxes.includes(winningPlays[i][0]) &&
                     player2.boxes.includes(winningPlays[i][1]) &&
-                    player2.boxes.includes(winningPlays[i][2])) {
-                    player2.increaseWins()
-                    this.winner = "player2"
-                    console.log("player2 won")
+                    player2.boxes.includes(winningPlays[i][2]))) {
+                        player2.increaseWins()
+                        this.winner = "player2"
+                        console.log("player2 won")
                 }
          }
     }
@@ -85,11 +92,11 @@ class Game {
             player2.boxes = []
             this.plays = 0
             if (this.winner === "player1") {
-                this.turn = 2
+                this.turn = "player2"
                 this.icon = player2.token
             }
             else if (this.winner === "player2") {
-                this.turn = 1
+                this.turn = "player1"
                 this.icon = player1.token
             }
             this.winner = null
