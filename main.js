@@ -1,11 +1,11 @@
 //----------------------------------------querySelectors-------------------------------
 var gameBoard = document.querySelector('.game-board')
-var gameStatus = document.querySelector('.game-status')
+var displayTurn = document.querySelector('.display-turn')
 var personScore = document.querySelector('.person-score')
 var bearScore = document.querySelector('.bear-score')
 var gameGrid = document.querySelectorAll('.grid')
 //----------------------------------------eventListeners-------------------------------
-gameBoard.addEventListener('click', function(event){
+gameBoard.addEventListener('click', function(event) {
     placeIcon(event)
     game.makePlay(event)
     updateText()
@@ -18,8 +18,6 @@ gameBoard.addEventListener('click', function(event){
 var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
-var checkPlayer1Arrays
-var checkPlayer2Arrays
 //----------------------------------------functions-------------------------------
 function placeIcon(event) {
     if (!event.target.classList.contains('taken')) {
@@ -29,32 +27,32 @@ function placeIcon(event) {
 }
 
 function updateText() {
-    gameStatus.innerText = `It is ${game.icon}'s turn`
+    displayTurn.innerText = `It is ${game.icon}'s turn`
 }
 
 function updateScore() {
     if (game.winner === "player1") {
         personScore.innerText = `${player1.wins} wins`
-        gameStatus.innerText =  `🏃‍♀️ won this round!`
+        displayTurn.innerText =  `🏃‍♀️ won this round!`
     }
     else if (game.winner === "player2") {
         bearScore.innerText = `${player2.wins} wins`
-        gameStatus.innerText = `🐻 won this round!`
+        displayTurn.innerText = `🐻 won this round!`
     }
     else if (game.winner === "draw") {
-        gameStatus.innerText = "It is a DRAW!"
+        displayTurn.innerText = "It is a DRAW!"
     }
     if (game.winner !== null) {
         pauseThenReset()
     }
 }
 
-function pauseThenReset(){
+function pauseThenReset() {
     setTimeout(resetBoard, 1000)
 }
 
 function resetBoard() {
-    gameStatus.innerText = `It's ${game.icon}'s turn`
+    displayTurn.innerText = `It's ${game.icon}'s turn`
     for (var i = 0; i < gameGrid.length; i++) {
         gameGrid[i].innerText = "" 
         gameGrid[i].classList.remove('taken') 
