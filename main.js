@@ -1,6 +1,6 @@
 //----------------------------------------querySelectors-------------------------------
 var gameBoard = document.querySelector('.game-board')
-var gameStatus = document.querySelector('.game-status')
+var displayTurn = document.querySelector('.display-turn')
 var personScore = document.querySelector('.person-score')
 var bearScore = document.querySelector('.bear-score')
 var gameGrid = document.querySelectorAll('.grid')
@@ -27,20 +27,20 @@ function placeIcon(event) {
 }
 
 function updateText() {
-    gameStatus.innerText = `It is ${game.icon}'s turn`
+    displayTurn.innerText = `It is ${game.icon}'s turn`
 }
 
 function updateScore() {
     if (game.winner === "player1") {
         personScore.innerText = `${player1.wins} wins`
-        gameStatus.innerText =  `🏃‍♀️ won this round!`
+        displayTurn.innerText =  `🏃‍♀️ won this round!`
     }
     else if (game.winner === "player2") {
         bearScore.innerText = `${player2.wins} wins`
-        gameStatus.innerText = `🐻 won this round!`
+        displayTurn.innerText = `🐻 won this round!`
     }
     else if (game.winner === "draw") {
-        gameStatus.innerText = "It is a DRAW!"
+        displayTurn.innerText = "It is a DRAW!"
     }
     if (game.winner !== null) {
         pauseThenReset()
@@ -52,7 +52,7 @@ function pauseThenReset() {
 }
 
 function resetBoard() {
-    gameStatus.innerText = `It's ${game.icon}'s turn`
+    displayTurn.innerText = `It's ${game.icon}'s turn`
     for (var i = 0; i < gameGrid.length; i++) {
         gameGrid[i].innerText = "" 
         gameGrid[i].classList.remove('taken') 

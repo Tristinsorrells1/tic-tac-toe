@@ -12,8 +12,13 @@ body {
     display: flex;
     justify-content: space-around;
 }
+.emoji {
+    font-size: 80px;
+    align-self: center;
+}
 
-.game-view {
+/* Game and Players Sections */
+.game-section {
     background-color: #99badd;
     height: 800px;
     width: 600px;
@@ -21,35 +26,25 @@ body {
     flex-direction: column;
 }
 
-.emoji {
-    font-size: 80px;
+.display-turn {
     align-self: center;
-}
-
-.game-status {
-    align-self: center;
-}
-
-/* Styling for Score and Displaying Turns */
-.score,
-.game-status {
-    font-size: 45px;
-    border-radius: 10px;
-    background: rgba(210, 207, 207, 0.9);
-    padding: 0px 30px 0px 30px;
-    
-}
-.game-status {
     margin: 30px;
 }
 
-.player-info,
-.game-info {
+.score,
+.display-turn {
+    font-size: 45px;
+    border-radius: 10px;
+    background: rgba(210, 207, 207, 0.9);
+    padding: 0px 30px 0px 30px; 
+}
+
+.player-section {
     display: flex;
     flex-direction: column;
 }
 
-/* Grid Styling */
+/* Grid */
 .game-board {
     display: grid;
     grid-template-rows: 200px 200px 200px;
