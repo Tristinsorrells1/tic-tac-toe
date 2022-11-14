@@ -3,7 +3,7 @@ var gameBoard = document.querySelector('.game-board')
 var displayTurn = document.querySelector('.display-turn')
 var personScore = document.querySelector('.person-score')
 var bearScore = document.querySelector('.bear-score')
-var gameGrid = document.querySelectorAll('.grid')
+var gameGrids = document.querySelectorAll('.grid')
 //----------------------------------------eventListeners-------------------------------
 gameBoard.addEventListener('click', function(event) {
     placeIcon(event)
@@ -31,42 +31,42 @@ var winningPlays = [
 ] 
 //----------------------------------------functions-------------------------------
 function placeIcon(event) {
-    moveString = event.target.id
-    if (!event.target.classList.contains('taken')) {
-        event.target.innerText = `${game.icon}`
-        event.target.classList.add('taken')
-    }
+  moveString = event.target.id
+  if (!event.target.classList.contains('taken')) {
+    event.target.innerText = `${game.icon}`
+    event.target.classList.add('taken')
+  }
 }
 
 function updateText() {
-    displayTurn.innerText = `It is ${game.icon}'s turn`
+  displayTurn.innerText = `It is ${game.icon}'s turn`
 }
 
 function updateScore() {
-    if (game.winner === "player1") {
-        personScore.innerText = `${player1.wins} wins`
-        displayTurn.innerText =  `🏃‍♀️ won this round!`
-    }
-    else if (game.winner === "player2") {
-        bearScore.innerText = `${player2.wins} wins`
-        displayTurn.innerText = `🐻 won this round!`
-    }
-    else if (game.winner === "draw") {
-        displayTurn.innerText = "It is a DRAW!"
-    }
-    if (game.winner !== null) {
-        pauseThenReset()
-    }
+  if (game.winner === "player1") {
+    personScore.innerText = `${player1.wins} wins`
+    displayTurn.innerText =  `🏃‍♀️ won this round!`
+  }
+  else if (game.winner === "player2") {
+    bearScore.innerText = `${player2.wins} wins`
+    displayTurn.innerText = `🐻 won this round!`
+  }
+  else if (game.winner === "draw") {
+    displayTurn.innerText = "It is a DRAW!"
+  }
+  if (game.winner !== null) {
+    pauseThenReset()
+  }
 }
 
 function pauseThenReset() {
-    setTimeout(resetBoard, 2000);
+  setTimeout(resetBoard, 2000);
 }
 
 function resetBoard() {
-    displayTurn.innerText = `It's ${game.icon}'s turn`
-    for (var i = 0; i < gameGrid.length; i++) {
-        gameGrid[i].innerText = "" 
-        gameGrid[i].classList.remove('taken') 
-    }
+  displayTurn.innerText = `It's ${game.icon}'s turn`
+  for (var i = 0; i < gameGrids.length; i++) {
+    gameGrids[i].innerText = "" 
+    gameGrids[i].classList.remove('taken') 
+  }
 }

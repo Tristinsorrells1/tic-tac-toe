@@ -73,7 +73,7 @@ class Game {
       this.turn = "player2"
       this.icon = player2.token
     }
-    else if (this.winner === "player2") {
+    else if (this.winner === "player2" || this.winner === "draw") {
       this.turn = "player1"
       this.icon = player1.token
     }
