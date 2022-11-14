@@ -32,4 +32,4 @@ This project was created by Tristin Sorrells, find my github [here](https://gith
 ##### Challenges
 - I had a really difficult time starting this project. I was struggling to write a method that would check if a player had placed 3 emojis in a row. I initially was storing the player's moves and the winning moves in objects, but once I switched to storing that data in arrays I was able to figure out how to evaluate if a player had won
 - It was really challenging for me to figure out the order in which I invoke my methods and functions. It seemed like everytime I changed the order to fix a bug, a new bug popped up
-- I spent a lot of time researching and trying to implement local storage before I realized that I could reset the DOM and Data model without refreshing the page
+- I spent a lot of time researching and trying to implement local storage before I realized that I could reset the DOM and data model without refreshing the page
