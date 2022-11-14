@@ -18,8 +18,10 @@ gameBoard.addEventListener('click', function(event) {
 var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
+var moveString 
 //----------------------------------------functions-------------------------------
 function placeIcon(event) {
+    moveString = event.target.id
     if (!event.target.classList.contains('taken')) {
         event.target.innerText = `${game.icon}`
         event.target.classList.add('taken')
@@ -48,7 +50,7 @@ function updateScore() {
 }
 
 function pauseThenReset() {
-    setTimeout(resetBoard, 1000)
+    setTimeout(resetBoard, 2000);
 }
 
 function resetBoard() {
