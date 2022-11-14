@@ -8,7 +8,7 @@ class Game {
       this.icon = "🐻"
     }
 
-    determineTurn() {
+    changeTurn() {
         if (this.turn === "player1") {
           this.turn = "player2"
           this.icon = player2.token
@@ -30,13 +30,13 @@ class Game {
           player2.boxes.push(move)
           console.log("player2boxes", player2.boxes)
           this.plays++
-          this.determineTurn()
+          this.changeTurn()
         }
         else if (this.turn === "player1") {
           player1.boxes.push(move)
           console.log("player1boxes", player1.boxes)
           this.plays++
-          this.determineTurn()
+          this.changeTurn()
         }
     }
         
