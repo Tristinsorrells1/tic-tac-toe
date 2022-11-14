@@ -7,7 +7,7 @@ var gameGrid = document.querySelectorAll('.grid')
 //----------------------------------------eventListeners-------------------------------
 gameBoard.addEventListener('click', function(event) {
     placeIcon(event)
-    game.makePlay(event)
+    game.makePlay()
     updateText()
     game.checkForWinner()
     game.checkForDraw()
@@ -18,8 +18,20 @@ gameBoard.addEventListener('click', function(event) {
 var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
+var moveString 
+var winningPlays = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+] 
 //----------------------------------------functions-------------------------------
 function placeIcon(event) {
+    moveString = event.target.id
     if (!event.target.classList.contains('taken')) {
         event.target.innerText = `${game.icon}`
         event.target.classList.add('taken')
@@ -48,7 +60,7 @@ function updateScore() {
 }
 
 function pauseThenReset() {
-    setTimeout(resetBoard, 1000)
+    setTimeout(resetBoard, 2000);
 }
 
 function resetBoard() {
