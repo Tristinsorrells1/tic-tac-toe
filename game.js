@@ -57,14 +57,12 @@ class Game {
           player1.boxes.includes(winningPlays[i][2]))) {
           player1.increaseWins()
           this.winner = "player1"
-          console.log("player1 won")
         }
         else if ((player2.boxes.includes(winningPlays[i][0]) &&
           player2.boxes.includes(winningPlays[i][1]) &&
           player2.boxes.includes(winningPlays[i][2]))) {
           player2.increaseWins()
           this.winner = "player2"
-          console.log("player2 won")
         }
       }
     }
