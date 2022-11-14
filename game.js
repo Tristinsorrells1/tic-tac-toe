@@ -39,7 +39,7 @@ class Game {
           this.changeTurn()
         }
     }
-    
+
     checkForWinner() {
       for (var i = 0; i < winningPlays.length; i++) {
         if ((player1.boxes.includes(winningPlays[i][0]) &&
@@ -60,7 +60,6 @@ class Game {
     checkForDraw() {
       if (this.plays === 9  && this.winner === null) {
         this.winner = "draw"
-        console.log("it's a draw")
       }
     }
 
