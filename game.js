@@ -19,7 +19,7 @@ class Game {
         }  
     }
 
-    makePlay(event) {
+    makePlay() {
       var move = parseInt(moveString)
         for (var i = 0; i < this.plays; i++) {
           if (player1.boxes[i] === move || player2.boxes[i] === move) {
