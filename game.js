@@ -39,18 +39,8 @@ class Game {
           this.changeTurn()
         }
     }
-        
+    
     checkForWinner() {
-      var winningPlays = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-        [1, 4, 7],
-        [2, 5, 8],
-        [3, 6, 9],
-        [1, 5, 9],
-        [3, 5, 7]
-      ] 
       for (var i = 0; i < winningPlays.length; i++) {
         if ((player1.boxes.includes(winningPlays[i][0]) &&
           player1.boxes.includes(winningPlays[i][1]) &&
