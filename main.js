@@ -15,9 +15,9 @@ gameBoard.addEventListener('click', function(event) {
     game.newGame()
 })
 //----------------------------------------global variables-------------------------------
-var game = new Game(player1, player2)
 var player1 = new Player(1,"🏃‍♀️")
 var player2 = new Player(2, "🐻")
+var game = new Game(player1, player2)
 var moveString 
 var winningPlays = [
     [1, 2, 3],
