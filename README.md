@@ -9,7 +9,7 @@ This app allows users to play a simple game of tic-tac-toe. Users take turns cli
 - Users should open the index.html file: open index.html
 
 ### Preview of App:
-![Loom_Message_-_14_November_2022__1__AdobeExpress](https://user-images.githubusercontent.com/109977562/201789321-ae7134b9-7bc1-44ab-b0ec-8c2e4d7d59a1.gif)
+![Loom_Message_-_14_November_2022__1__AdobeExpress (1)](https://user-images.githubusercontent.com/109977562/201789437-58a3e099-b277-4e4e-8a94-40b627a36976.gif)
 
 ### Context:
 This project was assigned to Mod 1 students in Turing's Front-End Engineering bootcamp. Students were given a week to create a fully functioning tic-tac-toe game and add styling of their choosing.
