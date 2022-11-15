@@ -7,8 +7,7 @@
 
 body {
     background-image: url('./assets/riccardo-chiarini-a4Swf9wzdKA-unsplash%20(1).jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: space-around;
 }
@@ -20,11 +19,11 @@ body {
 }
 
 .game-section {
-    background-color: #99badd;
-    height: 800px;
+    background-color: #90c5f6ee;
     width: 600px;
     display: flex;
     flex-direction: column;
+    margin: 30px 0px 30px 0px;
 }
 
 .display-turn {
@@ -36,7 +35,7 @@ body {
 .display-turn {
     font-size: 45px;
     border-radius: 10px;
-    background: rgba(210, 207, 207, 0.9);
+    background-color: rgba(195, 191, 191, 0.7);
     padding: 0px 30px 0px 30px; 
 }
 
@@ -69,6 +68,9 @@ body {
     cursor: not-allowed;
 }
 
+.disable {
+    pointer-events: none;
+}
 
 
 
