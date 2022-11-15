@@ -28,6 +28,7 @@ This project was created by Tristin Sorrells, find my github [here](https://gith
 ##### Wins
 - Compared to the group project, I have a much better understanding of keeping the data model fully seperate from the DOM
 - I wrote really DRY CSS
+- I was able to find and fix several bugs that would have been easy to miss
 
 ##### Challenges
 - I had a really difficult time starting this project. I was struggling to write a method that would check if a player had placed 3 emojis in a row. I initially was storing the player's moves and the winning moves in objects, but once I switched to storing that data in arrays I was able to figure out how to evaluate if a player had won
