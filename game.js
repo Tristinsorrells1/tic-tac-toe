@@ -36,7 +36,7 @@ class Game {
         return
       } 
     }
-    game.turn.boxes.push(move)
+    this.turn.boxes.push(move)
     this.plays++
     this.changeTurn()
   }
