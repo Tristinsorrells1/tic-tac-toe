@@ -64,20 +64,25 @@ class Game {
 
   newGame() {
     if (this.winner !== null) {
-      player1.boxes = []
-      player2.boxes = []
-      this.plays = 0
+      this.clearGameData()
     }
+  }
+
+  clearGameData() {
+    player1.boxes = []
+    player2.boxes = []
+    this.plays = 0
+    this.winner = null 
     if (this.startingPlayer === "player2") {
       this.startingPlayer = "player1"
       this.turn = "player1"
       this.icon = player1.token
     }
-    else if (this.startingPlayer === "player1") {
+    else {
       this.startingPlayer = "player2"
       this.turn = "player2"
       this.icon = player2.token
     }
-    this.winner = null 
-  }    
+  }
 }
+
