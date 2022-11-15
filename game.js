@@ -22,10 +22,9 @@ class Game {
     if (this.turn === "player1") {
       this.turn = "player2"
       this.icon = player2.token
-    }
-      else if (this.turn === "player2") {
-        this.turn = "player1"
-        this.icon = player1.token
+    } else if (this.turn === "player2") {
+      this.turn = "player1"
+      this.icon = player1.token
     }  
   }
 
@@ -40,27 +39,25 @@ class Game {
       player2.boxes.push(move)
       this.plays++
       this.changeTurn()
-    }
-      else if (this.turn === "player1") {
-        player1.boxes.push(move)
-        this.plays++
-        this.changeTurn()
+    } else if (this.turn === "player1") {
+      player1.boxes.push(move)
+      this.plays++
+      this.changeTurn()
     }
   }
 
   checkForWinner() {
     for (var i = 0; i < this.winningPlays.length; i++) {
       if ((player1.boxes.includes(this.winningPlays[i][0]) &&
-        player1.boxes.includes(this.winningPlays[i][1]) &&
-        player1.boxes.includes(this.winningPlays[i][2]))) {
-          player1.increaseWins()
-          this.winner = "player1"
-      }
-        else if ((player2.boxes.includes(this.winningPlays[i][0]) &&
-          player2.boxes.includes(this.winningPlays[i][1]) &&
-          player2.boxes.includes(this.winningPlays[i][2]))) {
-            player2.increaseWins()
-            this.winner = "player2"
+      player1.boxes.includes(this.winningPlays[i][1]) &&
+      player1.boxes.includes(this.winningPlays[i][2]))) {
+        player1.increaseWins()
+        this.winner = "player1"
+      } else if ((player2.boxes.includes(this.winningPlays[i][0]) &&
+        player2.boxes.includes(this.winningPlays[i][1]) &&
+        player2.boxes.includes(this.winningPlays[i][2]))) {
+        player2.increaseWins()
+        this.winner = "player2"
       }
     }
   }
@@ -82,10 +79,9 @@ class Game {
     if (this.winner === "player1") {
       this.turn = "player2"
       this.icon = player2.token
-    }
-      else if (this.winner === "player2" || this.winner === "draw") {
-        this.turn = "player1"
-        this.icon = player1.token
+    } else if (this.winner === "player2" || this.winner === "draw") {
+      this.turn = "player1"
+      this.icon = player1.token
     }
     this.winner = null     
   }

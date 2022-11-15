@@ -40,12 +40,10 @@ function updateScore() {
   if (game.winner === "player1") {
     personScore.innerText = `${player1.wins} wins`
     displayTurn.innerText =  `🏃‍♀️ won this round!`
-  }
-  else if (game.winner === "player2") {
+  } else if (game.winner === "player2") {
     bearScore.innerText = `${player2.wins} wins`
     displayTurn.innerText = `🐻 won this round!`
-  }
-  else if (game.winner === "draw") {
+  } else if (game.winner === "draw") {
     displayTurn.innerText = "It is a DRAW!"
   }
   if (game.winner !== null) {
