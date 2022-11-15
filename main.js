@@ -15,13 +15,15 @@ var game = new Game(player1, player2)
 var moveString 
 //----------------------------------------functions-------------------------------
 function takeTurn(event) {
-  placeIcon(event)
-  game.makePlay()
-  updateText()
-  game.checkForWinner()
-  game.checkForDraw()
-  updateScore()
-  game.newGame()
+  if (event.target.classList.contains('grid')) {
+    placeIcon(event)
+    game.makePlay()
+    updateText()
+    game.checkForWinner()
+    game.checkForDraw()
+    updateScore()
+    game.newGame()
+  }
 }
 
 function placeIcon(event) {
