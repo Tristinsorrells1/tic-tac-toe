@@ -6,6 +6,7 @@ class Game {
     this.turn = "player2"
     this.winner = null
     this.icon = "🐻"
+    this.startingPlayer = "player2"
   }
 
   changeTurn() {
@@ -66,17 +67,17 @@ class Game {
       player1.boxes = []
       player2.boxes = []
       this.plays = 0
-      this.turn = null
-      this.icon = null
     }
-    if (this.winner === "player1") {
-      this.turn = "player2"
-      this.icon = player2.token
-    }
-    else if (this.winner === "player2" || this.winner === "draw") {
+    if (this.startingPlayer === "player2") {
+      this.startingPlayer = "player1"
       this.turn = "player1"
       this.icon = player1.token
     }
-      this.winner = null     
-  }
+    else if (this.startingPlayer === "player1") {
+      this.startingPlayer = "player2"
+      this.turn = "player2"
+      this.icon = player2.token
+    }
+    this.winner = null 
+  }    
 }
