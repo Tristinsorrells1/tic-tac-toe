@@ -26,7 +26,7 @@ class Game {
       else if (this.turn === "player2") {
         this.turn = "player1"
         this.icon = player1.token
-      }  
+    }  
   }
 
   makePlay() {
@@ -45,7 +45,7 @@ class Game {
         player1.boxes.push(move)
         this.plays++
         this.changeTurn()
-      }
+    }
   }
 
   checkForWinner() {
@@ -61,7 +61,7 @@ class Game {
           player2.boxes.includes(this.winningPlays[i][2]))) {
             player2.increaseWins()
             this.winner = "player2"
-        }
+      }
     }
   }
 
@@ -86,7 +86,7 @@ class Game {
       else if (this.winner === "player2" || this.winner === "draw") {
         this.turn = "player1"
         this.icon = player1.token
-      }
+    }
     this.winner = null     
   }
 }
