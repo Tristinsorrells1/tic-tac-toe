@@ -3,7 +3,7 @@ class Game {
     this.player1 = player1
     this.player2 = player2
     this.plays = 0
-    this.turn = "player2"
+    this.turn = player2
     this.winner = null
     this.icon = "🐻"
     this.startingPlayer = "player2"
@@ -20,11 +20,11 @@ class Game {
   }
 
   changeTurn() {
-    if (this.turn === "player1") {
-      this.turn = "player2"
+    if (this.icon === "🏃‍♀️") {
+      this.turn = player2
       this.icon = player2.token
-    } else if (this.turn === "player2") {
-      this.turn = "player1"
+    } else if (this.icon === "🐻") {
+      this.turn = player1
       this.icon = player1.token
     }  
   }
@@ -34,19 +34,13 @@ class Game {
     for (var i = 0; i < this.plays; i++) {
       if (player1.boxes[i] === move || player2.boxes[i] === move) {
         return
-      }
+      } 
     }
-    if (this.turn === "player2") {
-      player2.boxes.push(move)
-      this.plays++
-      this.changeTurn()
-    } else if (this.turn === "player1") {
-      player1.boxes.push(move)
-      this.plays++
-      this.changeTurn()
-    }
+    game.turn.boxes.push(move)
+    this.plays++
+    this.changeTurn()
   }
-
+  
   checkForWinner() {
     for (var i = 0; i < this.winningPlays.length; i++) {
       if ((player1.boxes.includes(this.winningPlays[i][0]) &&
@@ -82,12 +76,12 @@ class Game {
     this.winner = null 
     if (this.startingPlayer === "player2") {
       this.startingPlayer = "player1"
-      this.turn = "player1"
+      this.turn = player1
       this.icon = player1.token
     }
     else {
       this.startingPlayer = "player2"
-      this.turn = "player2"
+      this.turn = player2
       this.icon = player2.token
     }
   }
