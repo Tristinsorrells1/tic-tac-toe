@@ -16,6 +16,7 @@ class Game {
       [1, 5, 9],
       [3, 5, 7]
     ] 
+    this.startingPlayer = "player2"
   }
 
   changeTurn() {
@@ -70,19 +71,25 @@ class Game {
 
   newGame() {
     if (this.winner !== null) {
-      player1.boxes = []
-      player2.boxes = []
-      this.plays = 0
-      this.turn = null
-      this.icon = null
+      this.clearGameData()
     }
-    if (this.winner === "player1") {
-      this.turn = "player2"
-      this.icon = player2.token
-    } else if (this.winner === "player2" || this.winner === "draw") {
+  }
+
+  clearGameData() {
+    player1.boxes = []
+    player2.boxes = []
+    this.plays = 0
+    this.winner = null 
+    if (this.startingPlayer === "player2") {
+      this.startingPlayer = "player1"
       this.turn = "player1"
       this.icon = player1.token
     }
-    this.winner = null     
+    else {
+      this.startingPlayer = "player2"
+      this.turn = "player2"
+      this.icon = player2.token
+    }
   }
 }
+

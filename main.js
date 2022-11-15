@@ -51,7 +51,7 @@ function updateScore() {
   }
 }
 
-function pauseThenReset() {
+function pauseThenReset() 
   gameBoard.classList.add('disable')
   setTimeout(resetBoard, 3000);
 }
