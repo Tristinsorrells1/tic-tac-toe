@@ -67,6 +67,9 @@ body {
     cursor: not-allowed;
 }
 
+.disable {
+    pointer-events: none;
+}
 
 
 

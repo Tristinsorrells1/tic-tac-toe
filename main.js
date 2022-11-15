@@ -6,13 +6,7 @@ var bearScore = document.querySelector('.bear-score')
 var gameGrids = document.querySelectorAll('.grid')
 //----------------------------------------eventListeners-------------------------------
 gameBoard.addEventListener('click', function(event) {
-    placeIcon(event)
-    game.makePlay()
-    updateText()
-    game.checkForWinner()
-    game.checkForDraw()
-    updateScore()
-    game.newGame()
+  takeTurn(event)
 })
 //----------------------------------------global variables-------------------------------
 var player1 = new Player(1,"🏃‍♀️")
@@ -30,6 +24,16 @@ var winningPlays = [
     [3, 5, 7]
 ] 
 //----------------------------------------functions-------------------------------
+function takeTurn(event) {
+  placeIcon(event)
+  game.makePlay()
+  updateText()
+  game.checkForWinner()
+  game.checkForDraw()
+  updateScore()
+  game.newGame()
+}
+
 function placeIcon(event) {
   moveString = event.target.id
   if (!event.target.classList.contains('taken')) {
@@ -60,11 +64,13 @@ function updateScore() {
 }
 
 function pauseThenReset() {
-  setTimeout(resetBoard, 2000);
+  gameBoard.classList.add('disable')
+  setTimeout(resetBoard, 3000);
 }
 
 function resetBoard() {
   displayTurn.innerText = `It's ${game.icon}'s turn`
+  gameBoard.classList.remove('disable')
   for (var i = 0; i < gameGrids.length; i++) {
     gameGrids[i].innerText = "" 
     gameGrids[i].classList.remove('taken') 
