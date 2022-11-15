@@ -60,7 +60,7 @@ function updateScore() {
 }
 
 function pauseThenReset() {
-  setTimeout(resetBoard, 2000);
+  setTimeout(resetBoard, 3000);
 }
 
 function resetBoard() {
