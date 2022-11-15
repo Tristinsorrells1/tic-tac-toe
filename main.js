@@ -9,8 +9,8 @@ gameBoard.addEventListener('click', function(event) {
   takeTurn(event)
 })
 //----------------------------------------global variables-------------------------------
-var player1 = new Player(1,"🏃‍♀️")
-var player2 = new Player(2, "🐻")
+var player1 = new Player("🏃‍♀️")
+var player2 = new Player("🐻")
 var game = new Game(player1, player2)
 var moveString 
 //----------------------------------------functions-------------------------------
