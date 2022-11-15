@@ -12,7 +12,7 @@ This app allows users to play a simple game of tic-tac-toe. Users take turns cli
 ![Loom_Message_-_14_November_2022__1__AdobeExpress (1)](https://user-images.githubusercontent.com/109977562/201789437-58a3e099-b277-4e4e-8a94-40b627a36976.gif)
 
 ### Context:
-This project was assigned to Mod 1 students in Turing's Front-End Engineering bootcamp. Students were given a week to create a fully functioning tic-tac-toe game and add styling of their choosing.
+This project was assigned to Mod 1 students in Turing's Front-End Engineering bootcamp. Students were given a week to create a fully functioning tic-tac-toe game and add styling of their choosing using HTML, CSS, and Javascript.
 
 ### Contributors:
 This project was created by Tristin Sorrells, find my github [here](https://github.com/Tristinsorrells1)
@@ -33,3 +33,6 @@ This project was created by Tristin Sorrells, find my github [here](https://gith
 - I had a really difficult time starting this project. I was struggling to write a method that would check if a player had placed 3 emojis in a row. I initially was storing the player's moves and the winning moves in objects, but once I switched to storing that data in arrays I was able to figure out how to evaluate if a player had won
 - It was really challenging for me to figure out the order in which I invoke my methods and functions. It seemed like everytime I changed the order to fix a bug, a new bug popped up
 - I spent a lot of time researching and trying to implement local storage before I realized that I could reset the DOM and data model without refreshing the page
+
+### Future Features
+- I would like to add a confetti effect when a player has won. I also would like players to be able to choose their own emojis.
