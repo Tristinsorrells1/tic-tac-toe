@@ -6,6 +6,7 @@ class Game {
     this.turn = "player2"
     this.winner = null
     this.icon = "🐻"
+    this.startingPlayer = "player2"
     this.winningPlays = [
       [1, 2, 3], 
       [4, 5, 6],
@@ -16,7 +17,6 @@ class Game {
       [1, 5, 9],
       [3, 5, 7]
     ] 
-    this.startingPlayer = "player2"
   }
 
   changeTurn() {
